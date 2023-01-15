@@ -11,8 +11,8 @@ pipeline {
         stage('Push') {
             steps {
                 script {
-                    docker.withRegistry("https://registry.hub.docker.com", "dockerhub") {
-                        docker.image("nodeapp:latest").push("latest")
+                    withDockerRegistry(credentialsId: 'dockerhub-token') {
+                    sh "docker push haseebaziz115/nodeapp:latest"
                     }
                 }
             }
