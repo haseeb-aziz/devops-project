@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry("https://registry.hub.docker.com", "dockerhub") {
-                        docker.image("my-image:latest").push("latest")
+                        docker.image("nodeapp:latest").push("latest")
                     }
                 }
             }
